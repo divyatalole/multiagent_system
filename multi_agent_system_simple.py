@@ -548,6 +548,29 @@ class RAGAgent:
                     analysis['insights'].append(f"Model-estimated success probability: {analysis['quantitative_model']['success_probability']}%")
                 except Exception as e:
                     logger.warning(f"Investor quantitative model unavailable: {e}")
+
+            # Quantitative augmentation for Researcher: Market trend forecast
+            if self.role == "Researcher":
+                try:
+                    from models.market_trend_model import MarketTrendModel
+                    mtm = MarketTrendModel()
+                    if not mtm.load():
+                        mtm.fit_synthetic(length=72)
+                        mtm.save()
+                    # Simple synthetic recent window for forecast demo
+                    import numpy as _np
+                    recent = 100 + 0.8 * _np.arange(24)  # placeholder trend window
+                    forecast = mtm.forecast_next(recent)
+                    analysis['market_trend_model'] = {
+                        'type': 'LagLinearRegression',
+                        'next_period': forecast.next_period_forecast,
+                        'growth_rate_percent': forecast.growth_rate_percent
+                    }
+                    analysis['insights'].append(
+                        f"Forecasted next-period market index: {forecast.next_period_forecast} (growth {forecast.growth_rate_percent}%)."
+                    )
+                except Exception as e:
+                    logger.warning(f"Researcher market trend model unavailable: {e}")
         else:
             analysis['insights'].append("No relevant documents found for this topic")
             analysis['recommendations'].append("Consider expanding knowledge base with relevant materials")

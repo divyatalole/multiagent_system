@@ -7,7 +7,7 @@ let agentAnalyses = {
 };
 
 // API configuration
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = 'http://localhost:8002';
 const API_ENDPOINTS = {
     analyze: '/analyze',
     agents: '/agents',
@@ -1050,6 +1050,53 @@ function generateReport() {
     const startup = currentStartupData;
     const overallScore = calculateOverallScore();
     
+    function stripHtml(html) {
+        return typeof html === 'string' ? html.replace(/<[^>]*>/g, '') : '';
+    }
+
+    function serializeAgentAnalysis(agent) {
+        // Simulation mode stored as HTML string
+        if (typeof agent === 'string') {
+            return stripHtml(agent);
+        }
+        // Real API object
+        if (agent && typeof agent === 'object') {
+            const lines = [];
+            lines.push(`Agent: ${agent.agent || ''} (${agent.role || ''})`);
+            if (typeof agent.relevant_documents === 'number') {
+                lines.push(`Relevant documents: ${agent.relevant_documents}`);
+            }
+            if (Array.isArray(agent.document_previews) && agent.document_previews.length) {
+                lines.push('Top documents:');
+                for (const d of agent.document_previews.slice(0, 5)) {
+                    const name = (d.source || '').toString().split('\\').pop();
+                    const rel = d.relevance != null ? ` (relevance: ${Math.round(d.relevance * 100)}%)` : '';
+                    lines.push(` - ${name}${rel}`);
+                }
+            }
+            if (agent.llm_analysis) {
+                lines.push('LLM Analysis:');
+                lines.push(agent.llm_analysis);
+            }
+            if (Array.isArray(agent.insights) && agent.insights.length) {
+                lines.push('Insights:');
+                for (const i of agent.insights) lines.push(` - ${i}`);
+            }
+            if (Array.isArray(agent.recommendations) && agent.recommendations.length) {
+                lines.push('Recommendations:');
+                for (const r of agent.recommendations) lines.push(` - ${r}`);
+            }
+            if (agent.quantitative_model) {
+                const qm = agent.quantitative_model;
+                lines.push('Quantitative Model:');
+                lines.push(` - Type: ${qm.type || ''}`);
+                if (qm.success_probability != null) lines.push(` - Success Probability: ${qm.success_probability}%`);
+            }
+            return lines.join('\n');
+        }
+        return 'Analysis not available';
+    }
+    
     return `
 STARTUP AI EVALUATION REPORT
 ============================
@@ -1077,13 +1124,13 @@ AI AGENT ANALYSES
 =================
 
 INVESTOR AGENT
-${agentAnalyses.investor ? agentAnalyses.investor.replace(/<[^>]*>/g, '') : 'Analysis not available'}
+${serializeAgentAnalysis(agentAnalyses.investor)}
 
 RESEARCHER AGENT
-${agentAnalyses.researcher ? agentAnalyses.researcher.replace(/<[^>]*>/g, '') : 'Analysis not available'}
+${serializeAgentAnalysis(agentAnalyses.researcher)}
 
 USER AGENT
-${agentAnalyses.user ? agentAnalyses.user.replace(/<[^>]*>/g, '') : 'Analysis not available'}
+${serializeAgentAnalysis(agentAnalyses.user)}
 
 FINAL RECOMMENDATION
 ====================
