@@ -1,0 +1,28 @@
+ctransformers==0.2.27
+numpy==1.24.3
+requests==2.31.0
+colorama==4.4.6
+# Enhanced Multi-Agent System Dependencies
+langchain==0.1.0
+langchain-community==0.0.10
+chromadb==0.4.22
+sentence-transformers==2.2.2
+pydantic==2.5.0
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+# MCDM and Decision Analysis
+scikit-criteria==0.3.0
+pandas==2.1.4
+# Vector Database and Embeddings
+faiss-cpu==1.7.4
+# Model Context Protocol
+mcp==0.1.0
+# Async support
+aiofiles==23.2.1
+asyncio-mqtt==0.16.1
+# PDF Processing
+PyPDF2==3.0.1
+pdfplumber==0.10.3
+python-magic==0.4.27
+scikit-learn==1.5.2

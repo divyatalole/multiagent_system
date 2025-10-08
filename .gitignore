@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage*
+*.egg-info/
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local data / artifacts
+chroma_db/
+knowledge_base/**/*.pdf
+knowledge_base/**/*.ppt*
+knowledge_base/**/*.doc*
+knowledge_base/**/*.xlsx*
+analysis_output.json
+
+# Models & large binaries
+model/**/*.gguf
+models/*.joblib
+
+# Node / Frontend (if any)
+node_modules/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+

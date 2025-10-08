@@ -1,0 +1,213 @@
+Startup Funding Stages and Investment Criteria
+===============================================
+
+PRE-SEED STAGE ($0-500K)
+- Purpose: Idea validation, team building, market research
+- Key Metrics: Problem-solution fit, team quality, market size
+- Investment Criteria: Strong founding team, clear problem identification, large addressable market
+- Typical Investors: Friends & family, angel investors, incubators
+- Success Indicators: Customer interviews completed, MVP concept validated
+
+SEED STAGE ($500K-2M)
+- Purpose: MVP development, market testing, initial customer acquisition
+- Key Metrics: Monthly Recurring Revenue (MRR), Customer Acquisition Cost (CAC), Customer Lifetime Value (LTV)
+- Investment Criteria: Product-market fit, early customer traction, scalable business model
+- Typical Investors: Seed funds, angel groups, early-stage VCs
+- Success Indicators: $10K+ MRR, 20%+ month-over-month growth
+
+SERIES A ($2M-15M)
+- Purpose: Product-market fit validation, team scaling, market expansion
+- Key Metrics: ARR (Annual Recurring Revenue), burn rate, runway, customer retention
+- Investment Criteria: Proven product-market fit, strong growth metrics, experienced team
+- Typical Investors: Venture capital firms, growth funds
+- Success Indicators: $1M+ ARR, 100%+ year-over-year growth
+
+SERIES B ($15M-100M)
+- Purpose: Market expansion, operational scaling, international growth
+- Key Metrics: Unit economics, market share, competitive positioning
+- Investment Criteria: Strong unit economics, market leadership, proven scalability
+- Typical Investors: Growth equity firms, late-stage VCs
+- Success Indicators: Positive unit economics, market leadership position
+
+SERIES C+ ($100M+)
+- Purpose: International expansion, acquisitions, IPO preparation
+- Key Metrics: EBITDA, market dominance, strategic partnerships
+- Investment Criteria: Market leadership, strong financials, clear exit path
+- Typical Investors: Private equity, sovereign wealth funds, strategic investors
+- Success Indicators: Market dominance, strong profitability, clear exit strategy
+
+KEY INVESTMENT METRICS
+======================
+
+ARR (Annual Recurring Revenue)
+- Definition: Annualized value of recurring revenue contracts
+- Target: $1M+ for Series A, $10M+ for Series B
+- Growth Rate: 100%+ year-over-year for early stages
+
+CAC (Customer Acquisition Cost)
+- Definition: Total cost to acquire one customer
+- Target: CAC < LTV/3 for sustainable growth
+- Optimization: Focus on organic growth channels
+
+LTV (Customer Lifetime Value)
+- Definition: Total revenue from customer over relationship
+- Target: LTV > 3x CAC for healthy unit economics
+- Calculation: Average revenue per customer × customer lifespan
+
+Burn Rate
+- Definition: Monthly cash consumption
+- Target: 12-18 months runway minimum
+- Management: Balance growth with sustainability
+
+Runway
+- Definition: Time until cash runs out
+- Target: 18+ months for early stages
+- Planning: Raise next round 6-12 months before running out
+
+INVESTMENT EVALUATION FRAMEWORK
+===============================
+
+TEAM ASSESSMENT (30% weight)
+- Founder experience and track record
+- Team completeness and expertise
+- Execution capability and adaptability
+- Network and industry connections
+
+MARKET OPPORTUNITY (25% weight)
+- Total Addressable Market (TAM) size
+- Market growth rate and trends
+- Competitive landscape analysis
+- Regulatory environment assessment
+
+PRODUCT/SOLUTION (20% weight)
+- Problem-solution fit validation
+- Technology differentiation and IP
+- Scalability and technical feasibility
+- User experience and adoption potential
+
+BUSINESS MODEL (15% weight)
+- Revenue model clarity and sustainability
+- Unit economics and profitability potential
+- Customer acquisition strategy
+- Pricing power and market positioning
+
+TRACTION & METRICS (10% weight)
+- Customer growth and retention
+- Revenue growth and predictability
+- Market validation and feedback
+- Operational efficiency metrics
+
+RISK ASSESSMENT FRAMEWORK
+=========================
+
+TECHNICAL RISKS
+- Technology maturity and reliability
+- Scalability challenges and limitations
+- Security and compliance requirements
+- Technical debt and maintenance costs
+
+MARKET RISKS
+- Market timing and adoption barriers
+- Competitive pressure and differentiation
+- Regulatory changes and compliance
+- Economic cycles and market volatility
+
+EXECUTION RISKS
+- Team scaling and management challenges
+- Operational complexity and costs
+- Customer acquisition and retention
+- International expansion challenges
+
+FINANCIAL RISKS
+- Cash flow management and burn rate
+- Funding availability and terms
+- Unit economics and profitability
+- Exit strategy and valuation multiples
+
+INVESTMENT RECOMMENDATION FRAMEWORK
+===================================
+
+STRONG BUY (Score: 8-10)
+- Exceptional team with proven track record
+- Large, growing market with clear competitive advantage
+- Strong product-market fit with significant traction
+- Clear path to profitability and exit
+- Recommendation: Invest maximum allocation
+
+BUY (Score: 6-7.9)
+- Strong team with relevant experience
+- Good market opportunity with moderate competition
+- Validated product-market fit with growing traction
+- Path to profitability within 18-24 months
+- Recommendation: Invest standard allocation
+
+HOLD (Score: 4-5.9)
+- Adequate team with some concerns
+- Moderate market opportunity with high competition
+- Unclear product-market fit or limited traction
+- Uncertain path to profitability
+- Recommendation: Monitor closely, consider follow-on
+
+SELL (Score: 1-3.9)
+- Weak team or execution concerns
+- Small or declining market opportunity
+- Poor product-market fit or no traction
+- No clear path to profitability
+- Recommendation: Avoid investment, consider exit
+
+EXIT STRATEGY CONSIDERATIONS
+============================
+
+ACQUISITION EXIT
+- Strategic value to larger companies
+- Market consolidation opportunities
+- Technology or team acquisition potential
+- Typical timeline: 3-7 years
+- Expected returns: 3-10x investment
+
+IPO EXIT
+- Market conditions and investor appetite
+- Company size and financial metrics
+- Regulatory compliance and reporting
+- Typical timeline: 5-10 years
+- Expected returns: 5-20x investment
+
+SECONDARY SALE
+- Liquidity for early investors
+- Company maturity and market position
+- Secondary market dynamics
+- Typical timeline: 4-8 years
+- Expected returns: 2-8x investment
+
+DUE DILIGENCE CHECKLIST
+========================
+
+FINANCIAL DUE DILIGENCE
+- Revenue model and projections
+- Unit economics and profitability analysis
+- Cash flow and working capital
+- Financial controls and reporting
+
+TECHNICAL DUE DILIGENCE
+- Technology architecture and scalability
+- Security and compliance measures
+- Intellectual property and patents
+- Technical team capabilities
+
+MARKET DUE DILIGENCE
+- Market size and growth projections
+- Competitive landscape analysis
+- Customer validation and feedback
+- Regulatory environment assessment
+
+LEGAL DUE DILIGENCE
+- Corporate structure and governance
+- Contracts and agreements
+- Intellectual property rights
+- Regulatory compliance status
+
+OPERATIONAL DUE DILIGENCE
+- Team structure and capabilities
+- Operational processes and efficiency
+- Customer support and satisfaction
+- Scalability and growth plans

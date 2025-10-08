@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StartupAI - Multi-Agent Evaluation Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <h1>StartupAI</h1>
+                </div>
+                <p class="tagline">AI-Powered Startup Evaluation by Expert Agents</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Pills / Tabs (visual only) -->
+            <section class="nav-pills">
+                <div class="pill"><i class="fas fa-chart-line"></i> Investor Perspective</div>
+                <div class="pill"><i class="fas fa-microscope"></i> Research Analysis</div>
+                <div class="pill"><i class="fas fa-user"></i> User Experience</div>
+            </section>
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="card">
+                    <h2><i class="fas fa-lightbulb"></i> Submit Your Startup Idea</h2>
+                    <form id="startupForm" class="startup-form">
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="startupName">Startup Name / Idea Title *</label>
+                                <input type="text" id="startupName" name="startupName" placeholder="e.g., EcoDelivery - Sustainable Last-Mile Logistics" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="briefDescription">Brief Description *</label>
+                                <textarea id="briefDescription" name="briefDescription" placeholder="Provide a concise overview of your startup idea..." rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="targetMarket">Target Market</label>
+                                <input id="targetMarket" name="targetMarket" placeholder="e.g., E-commerce retailers, Urban consumers">
+                            </div>
+                            <div class="form-group">
+                                <label for="problemStatement">Problem Statement *</label>
+                                <textarea id="problemStatement" name="problemStatement" placeholder="What specific problem does your startup solve?" rows="3" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="businessModel">Business Model</label>
+                                <select id="businessModel" name="businessModel">
+                                    <option value="">Select Business Model</option>
+                                    <option>B2B SaaS</option>
+                                    <option>B2C Subscription</option>
+                                    <option>Marketplace</option>
+                                    <option>Usage-Based</option>
+                                    <option>Freemium</option>
+                                    <option>Enterprise Licensing</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="solution">Proposed Solution *</label>
+                                <textarea id="solution" name="solution" placeholder="How does your solution address the problem?" rows="3" required></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-group">
+                                <label for="fundingStage">Funding Stage</label>
+                                <select id="fundingStage" name="fundingStage">
+                                    <option>Pre-Seed</option>
+                                    <option>Seed</option>
+                                    <option>Series A</option>
+                                    <option>Bootstrapped</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="teamSize">Team Size</label>
+                                <select id="teamSize" name="teamSize">
+                                    <option>1-2 People</option>
+                                    <option>3-5 People</option>
+                                    <option>6-10 People</option>
+                                    <option>10+ People</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="competitiveAdvantage">Competitive Advantage</label>
+                            <textarea id="competitiveAdvantage" name="competitiveAdvantage" placeholder="What makes your solution unique or better than existing alternatives?" rows="3" required></textarea>
+                        </div>
+
+                        <!-- Additional Materials Upload -->
+                        <div class="upload-section">
+                            <h3>Additional Materials (Optional)</h3>
+                            <div id="dropzone" class="dropzone">
+                                <div class="dz-icon"><i class="fas fa-upload"></i></div>
+                                <p>Upload pitch deck, business plan, or supporting documents</p>
+                                <label class="upload-btn">
+                                    <input id="files" name="files" type="file" multiple style="display:none"> 
+                                    <i class="fas fa-file"></i> Choose Files
+                                </label>
+                                <div id="fileList" class="file-list"></div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Begin AI Analysis
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- AI Agents Section -->
+            <section class="agents-section" id="agentsSection" style="display: none;">
+                <h2><i class="fas fa-robot"></i> AI Agent Analysis</h2>
+                
+                <!-- Individual Agent Analysis -->
+                <div class="agents-grid">
+                    <!-- Investor Agent -->
+                    <div class="agent-card investor">
+                        <div class="agent-header">
+                            <div class="agent-avatar">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="agent-info">
+                                <h3>Investor Agent</h3>
+                                <p>Financial & Market Analysis</p>
+                            </div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="loading-spinner" id="investorLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Analyzing investment potential...</p>
+                            </div>
+                            <div class="analysis-content" id="investorAnalysis" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Researcher Agent -->
+                    <div class="agent-card researcher">
+                        <div class="agent-header">
+                            <div class="agent-avatar">
+                                <i class="fas fa-microscope"></i>
+                            </div>
+                            <div class="agent-info">
+                                <h3>Researcher Agent</h3>
+                                <p>Technical & Market Research</p>
+                            </div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="loading-spinner" id="researcherLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Conducting market research...</p>
+                            </div>
+                            <div class="analysis-content" id="researcherAnalysis" style="display: none;"></div>
+                        </div>
+                    </div>
+
+                    <!-- User Agent -->
+                    <div class="agent-card user">
+                        <div class="agent-header">
+                            <div class="agent-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="agent-info">
+                                <h3>User Agent</h3>
+                                <p>User Experience & Adoption</p>
+                            </div>
+                        </div>
+                        <div class="agent-content">
+                            <div class="loading-spinner" id="userLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Evaluating user experience...</p>
+                            </div>
+                            <div class="analysis-content" id="userAnalysis" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collaborative Discussion -->
+                <div class="collaboration-section" id="collaborationSection" style="display: none;">
+                    <div class="card">
+                        <h3><i class="fas fa-comments"></i> Collaborative Discussion</h3>
+                        <div class="discussion-content">
+                            <div class="loading-spinner" id="collaborationLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Agents are discussing your startup...</p>
+                            </div>
+                            <div class="discussion-thread" id="discussionThread" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final Recommendation -->
+                <div class="recommendation-section" id="recommendationSection" style="display: none;">
+                    <div class="card">
+                        <h3><i class="fas fa-star"></i> Final Recommendation</h3>
+                        <div class="recommendation-content">
+                            <div class="loading-spinner" id="recommendationLoading">
+                                <i class="fas fa-spinner fa-spin"></i>
+                                <p>Generating final recommendation...</p>
+                            </div>
+                            <div class="recommendation-summary" id="recommendationSummary" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Summary -->
+            <section class="results-section" id="resultsSection" style="display: none;">
+                <div class="card">
+                    <h2><i class="fas fa-chart-bar"></i> Evaluation Summary</h2>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <h4>Overall Score</h4>
+                            <div class="score" id="overallScore">-</div>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Risk Level</h4>
+                            <div class="risk-level" id="riskLevel">-</div>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Market Potential</h4>
+                            <div class="market-potential" id="marketPotential">-</div>
+                        </div>
+                        <div class="summary-item">
+                            <h4>Feasibility</h4>
+                            <div class="feasibility" id="feasibility">-</div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" onclick="downloadReport()">
+                            <i class="fas fa-download"></i>
+                            Download Report
+                        </button>
+                        <button class="btn btn-secondary" onclick="resetForm()">
+                            <i class="fas fa-redo"></i>
+                            Evaluate Another Idea
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 StartupAI. Powered by Multi-Agent AI Technology.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
