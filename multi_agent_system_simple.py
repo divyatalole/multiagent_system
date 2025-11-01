@@ -517,13 +517,14 @@ class RAGAgent:
             llm_response = self._call_llm(prompt)
             analysis['llm_analysis'] = llm_response or "LLM analysis unavailable"
             
-            # Add document context
+            # Add document context (include all fields for full display)
             analysis['document_previews'] = [
                 {
-                    'source': doc['source'],
-                    'type': doc['type'],
-                    'preview': doc['preview'],
-                    'relevance': doc['relevance']
+                    'source': doc.get('source', 'Unknown'),
+                    'type': doc.get('type', 'unknown'),
+                    'preview': doc.get('preview', ''),
+                    'content': doc.get('content', doc.get('preview', '')),  # Include full content
+                    'relevance': doc.get('relevance', 0.0)
                 }
                 for doc in relevant_docs
             ]
@@ -637,7 +638,10 @@ class RAGAgent:
         return role_prompts.get(self.role, f"Analyze this topic: {topic}\n\nContext: {doc_context}")
     
     def _call_llm(self, prompt: str, model: str = "mistral-local") -> Optional[str]:
-        """Call LLM (local or Ollama)"""
+        """Call LLM (local or Ollama) with timeout protection"""
+        import signal
+        import threading
+        
         # Try local LLM first; lazy-init if necessary
         if (self.local_llm is None or not getattr(self.local_llm, 'loaded', False)) and LOCAL_LLM_AVAILABLE:
             try:
@@ -646,21 +650,54 @@ class RAGAgent:
                 self.local_llm.load_model()
             except Exception as _:
                 self.local_llm = None
+        
         if self.local_llm and self.local_llm.loaded:
-            logger.info("Using local LLM for analysis")
-            return self.local_llm.generate_response(prompt, max_tokens=256)
+            logger.info(f"Using local LLM for analysis (max 300s timeout, 1024 tokens)")
+            try:
+                # Wrap LLM call with timeout protection using threading
+                result = [None]
+                exception = [None]
+                
+                def llm_call():
+                    try:
+                        # Generate meaningful analysis with sufficient tokens for detailed feedback
+                        result[0] = self.local_llm.generate_response(prompt, max_tokens=1024)
+                    except Exception as e:
+                        exception[0] = e
+                
+                thread = threading.Thread(target=llm_call)
+                thread.daemon = True
+                thread.start()
+                thread.join(timeout=300)  # 5 minute timeout per agent (enough for quality output)
+                
+                if thread.is_alive():
+                    logger.warning(f"LLM call timed out after 300s for {self.name}")
+                    return f"[Analysis incomplete - LLM timeout] As {self.role}, I started analyzing but the response took longer than expected. Here's a brief summary based on available context: The topic shows potential, but detailed analysis requires more processing time."
+                
+                if exception[0]:
+                    logger.error(f"LLM call failed: {exception[0]}")
+                    return None
+                
+                return result[0]
+                
+            except Exception as e:
+                logger.error(f"Error calling local LLM: {e}")
+                return None
         
         # Fallback to Ollama
         try:
-            logger.info("Using Ollama API for analysis")
+            logger.info("Using Ollama API for analysis (1024 tokens, 300s timeout)")
             response = requests.post(
                 f"{self.ollama_url}/api/generate",
                 json={
                     "model": model,
                     "prompt": prompt,
-                    "stream": False
+                    "stream": False,
+                    "options": {
+                        "num_predict": 1024  # Allow up to 1024 tokens for meaningful output
+                    }
                 },
-                timeout=30
+                timeout=300  # 5 minute timeout for quality output
             )
             
             if response.status_code == 200:

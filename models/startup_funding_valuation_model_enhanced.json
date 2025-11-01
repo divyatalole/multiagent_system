@@ -1,0 +1,12 @@
+{
+  "feature_columns": [
+    "IndustryVertical",
+    "CityLocation",
+    "InvestmentType",
+    "SubVertical"
+  ],
+  "model_type": "RandomForestRegressor",
+  "training_samples": 2065,
+  "n_estimators": 300,
+  "target_transform": "log1p"
+}

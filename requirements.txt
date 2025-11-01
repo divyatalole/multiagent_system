@@ -1,7 +1,7 @@
-ctransformers==0.2.27
+ctransformers==0.2.27; python_version < "3.12"
 numpy==1.24.3
 requests==2.31.0
-colorama==4.4.6
+colorama==0.4.6
 # Enhanced Multi-Agent System Dependencies
 langchain==0.1.0
 langchain-community==0.0.10
@@ -12,10 +12,10 @@ fastapi==0.104.1
 uvicorn==0.24.0
 python-multipart==0.0.6
 # MCDM and Decision Analysis
-scikit-criteria==0.3.0
+scikit-criteria>=0.8
 pandas==2.1.4
 # Vector Database and Embeddings
-faiss-cpu==1.7.4
+faiss-cpu==1.7.4; python_version < "3.12"
 # Model Context Protocol
 mcp==0.1.0
 # Async support
@@ -26,5 +26,6 @@ PyPDF2==3.0.1
 pdfplumber==0.10.3
 python-magic==0.4.27
 scikit-learn==1.5.2
-langgraph==0.1.0
-prophet==1.1.5
+langgraph==0.1.0; python_version < "3.12"
+prophet==1.1.5; python_version < "3.12"
+streamlit==1.29.0

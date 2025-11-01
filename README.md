@@ -79,14 +79,18 @@ A sophisticated **Multi-Agent Thinking Partner** that bridges the gap between re
 ## 🗂️ Project Layout
 
 - `cli.py`: CLI runner for the full multi-agent system
-- `server.py`: FastAPI server exposing the API
+- `server_simple.py`: FastAPI server exposing the API
 - `multi_agent_system.py`: Full-featured system (RAG, MCP, MCDM)
 - `multi_agent_system_simple.py`: Lightweight PDF/text analyzer + simple agents
+- `orchestrator.py`: LangGraph workflow orchestration
+- `synthesis.py`: MCDM-based consensus building
+- `evaluation.py`: Retrieval quality evaluation metrics
+- `evaluate_retrieval.py`: Evaluation script for RAG quality
 - `interactive_pdf_analyzer.py`: CLI demo on top of the simplified system
-- `investor_ollama.py`: Ollama-based investor JSON analysis
-- `knowledge_base/`: Text and PDF documents
-- `model/`: Local model files (GGUF)
-- `tests/`: Automated tests (`tests/test_pdf.py`)
+- `knowledge_base/`: Text and PDF documents (12 files, 1,799 chunks)
+- `models/`: Trained ML models (valuations, market trends)
+- `scripts/`: Training scripts for models
+- `tests/`: Automated tests (`tests/test_pdf.py`, `test_rag_verification.py`)
 - Frontend: `index.html`, `script.js`, `styles.css`
 
 ## 🏗️ **System Architecture Details**
@@ -188,6 +192,31 @@ A sophisticated **Multi-Agent Thinking Partner** that bridges the gap between re
 ### **Demos & Examples**
 - CLI demo (PDF KB, simple agents): `python interactive_pdf_analyzer.py`
 - Ollama investor JSON: `python investor_ollama.py`
+
+### **RAG Retrieval Quality Evaluation**
+1. **Evaluate General Retrieval**:
+   ```bash
+   python evaluate_retrieval.py --queries test_queries.json
+   ```
+
+2. **Evaluate All Roles**:
+   ```bash
+   python evaluate_retrieval.py --all-roles --output results.json
+   ```
+
+3. **Evaluate Specific Role**:
+   ```bash
+   python evaluate_retrieval.py --role Investor
+   ```
+
+4. **Metrics Measured**:
+   - Hit Rate: Did the retriever find any relevant document?
+   - Precision@k: What percentage of retrieved docs were relevant?
+   - Recall@k: What percentage of all relevant docs were found?
+   - MRR: How early was the first relevant document found?
+   - nDCG@k: Overall ranking quality (gold standard metric)
+
+5. **See Results**: Check `RETRIEVAL_EVALUATION.md` for detailed report
 
 ### **MCDM Customization**
 1. **Criteria Weights**: Adjust importance of different factors

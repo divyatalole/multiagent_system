@@ -1,0 +1,196 @@
+[
+  {
+    "query": "AI startup funding",
+    "relevant_docs": [
+      "knowledge_base\\startup_funding.txt",
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf",
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\startup_funding.txt": 1.0,
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf": 0.9,
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf": 0.8
+    },
+    "role": "Investor"
+  },
+  {
+    "query": "market size TAM SAM analysis",
+    "relevant_docs": [
+      "knowledge_base\\Market-sizing_Meet-SAM-and-TAM.pdf",
+      "knowledge_base\\market_analysis.txt",
+      "knowledge_base\\startup_funding.txt"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\Market-sizing_Meet-SAM-and-TAM.pdf": 1.0,
+      "knowledge_base\\market_analysis.txt": 0.9,
+      "knowledge_base\\startup_funding.txt": 0.6
+    },
+    "role": "Investor"
+  },
+  {
+    "query": "technology trends and innovation",
+    "relevant_docs": [
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf",
+      "knowledge_base\\gser-2025_9031.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf": 1.0,
+      "knowledge_base\\gser-2025_9031.pdf": 0.9
+    },
+    "role": "Researcher"
+  },
+  {
+    "query": "business model SaaS subscription",
+    "relevant_docs": [
+      "knowledge_base\\business_models.txt",
+      "knowledge_base\\startup_funding.txt"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\business_models.txt": 1.0,
+      "knowledge_base\\startup_funding.txt": 0.7
+    },
+    "role": "User"
+  },
+  {
+    "query": "why startups fail common reasons",
+    "relevant_docs": [
+      "knowledge_base\\The-20-Reasons-Startups-Fail.pdf",
+      "knowledge_base\\business_models.txt"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\The-20-Reasons-Startups-Fail.pdf": 1.0,
+      "knowledge_base\\business_models.txt": 0.8
+    },
+    "role": "Investor"
+  },
+  {
+    "query": "pitch deck template structure",
+    "relevant_docs": [
+      "knowledge_base\\pitch-deck-template-web.pdf",
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\pitch-deck-template-web.pdf": 1.0,
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf": 0.9
+    },
+    "role": "User"
+  },
+  {
+    "query": "due diligence investor checklist",
+    "relevant_docs": [
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf",
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf": 1.0,
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf": 0.7
+    },
+    "role": "Investor"
+  },
+  {
+    "query": "ROI revenue margins financial analysis",
+    "relevant_docs": [
+      "knowledge_base\\startup_funding.txt",
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf",
+      "knowledge_base\\business_models.txt"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\startup_funding.txt": 0.9,
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf": 0.9,
+      "knowledge_base\\business_models.txt": 0.7
+    },
+    "role": "Investor"
+  },
+  {
+    "query": "technical feasibility benchmark methods",
+    "relevant_docs": [
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf",
+      "knowledge_base\\gser-2025_9031.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf": 0.9,
+      "knowledge_base\\gser-2025_9031.pdf": 1.0
+    },
+    "role": "Researcher"
+  },
+  {
+    "query": "user experience adoption onboarding",
+    "relevant_docs": [
+      "knowledge_base\\business_models.txt",
+      "knowledge_base\\pitch-deck-template-web.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\business_models.txt": 0.8,
+      "knowledge_base\\pitch-deck-template-web.pdf": 0.7
+    },
+    "role": "User"
+  },
+  {
+    "query": "valuation investment funding stages",
+    "relevant_docs": [
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf",
+      "knowledge_base\\startup_funding.txt",
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf": 1.0,
+      "knowledge_base\\startup_funding.txt": 0.9,
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf": 0.8
+    },
+    "role": "Investor"
+  },
+  {
+    "query": "AI AR VR immersive reality technology",
+    "relevant_docs": [
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf",
+      "knowledge_base\\gser-2025_9031.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf": 1.0,
+      "knowledge_base\\gser-2025_9031.pdf": 0.9
+    },
+    "role": "Researcher"
+  },
+  {
+    "query": "competitive advantage differentiation",
+    "relevant_docs": [
+      "knowledge_base\\business_models.txt",
+      "knowledge_base\\The-20-Reasons-Startups-Fail.pdf",
+      "knowledge_base\\startup_funding.txt"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\business_models.txt": 1.0,
+      "knowledge_base\\The-20-Reasons-Startups-Fail.pdf": 0.8,
+      "knowledge_base\\startup_funding.txt": 0.6
+    },
+    "role": "User"
+  },
+  {
+    "query": "seed round series A fundraising",
+    "relevant_docs": [
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf",
+      "knowledge_base\\startup_funding.txt",
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\Y-combinator-guide-to-seed-fundraising.pdf": 1.0,
+      "knowledge_base\\startup_funding.txt": 0.9,
+      "knowledge_base\\GCV Investor Due Diligence Checklist.pdf": 0.7
+    },
+    "role": "Investor"
+  },
+  {
+    "query": "machine learning algorithms datasets",
+    "relevant_docs": [
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf",
+      "knowledge_base\\gser-2025_9031.pdf"
+    ],
+    "relevance_scores": {
+      "knowledge_base\\mckinsey-technology-trends-outlook-2025.pdf": 0.9,
+      "knowledge_base\\gser-2025_9031.pdf": 1.0
+    },
+    "role": "Researcher"
+  }
+]
+
+

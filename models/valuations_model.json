@@ -1,0 +1,16 @@
+{
+  "model_type": "RandomForestRegressor",
+  "training_samples": 500,
+  "features": [
+    "Funding Amount (M USD)",
+    "Revenue (M USD)",
+    "Employees",
+    "Industry",
+    "Funding Rounds"
+  ],
+  "target": "Valuation (M USD)",
+  "preprocessing": {
+    "numerical": "StandardScaler",
+    "categorical": "OneHotEncoder"
+  }
+}
